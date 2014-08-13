@@ -1,14 +1,9 @@
 namespace :heroku_migration do
 	desc "TODO"
 	task migrate_if_new: :environment do
-		exec("heroku maintenance:on")
-		exec("git push heroku master")
-		exec("rake db:migrate:status")
-		# if(pending)
-		# 	exec("heroku stop scheduler")
-		# 	exec("rake db:migrate")
-		# 	exec("heroku restart")
-		# end
-		exec("heroku maintenance:off") 
+		pending_migrations = ActiveRecord::Migrator.open(ActiveRecord::Migrator.migrations_paths).pending_migrations
+		if pending_migrations.any?
+			Rake::Task["db:migrate"].invoke
+		end
 	end
 end
