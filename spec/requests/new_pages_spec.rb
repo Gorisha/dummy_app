@@ -6,7 +6,7 @@ describe "Static pages" do
 
     it "should have the content 'Sample'" do
       visit '/dummytest/new'
-      expect(page).to have_content('')
+      expect(page).to have_content('sdf')
     end
   end
 end
