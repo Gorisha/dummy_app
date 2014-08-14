@@ -12,3 +12,4 @@ namespace :heroku_migration do
 	task heroku_off: :environment do
 		exec("heroku maintenance:off")
 end
+end
