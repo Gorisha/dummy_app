@@ -8,6 +8,7 @@ gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder'
+gem 'pg'
 gem 'spring'
 
 group :development, :test do
@@ -21,7 +22,7 @@ group :test do
 end
 
 group :production do
-  gem 'pg', '0.15.1'
+  # gem 'pg', '0.15.1'
   gem 'rails_12factor', '0.0.2'
 end
 
