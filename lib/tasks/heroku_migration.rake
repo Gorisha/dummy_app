@@ -9,6 +9,7 @@ namespace :heroku_migration do
 			Rake::Task["db:migrate"].invoke
 		end
 	end
+	
 	task heroku_off: :environment do
 		exec("heroku maintenance:off")
 end
